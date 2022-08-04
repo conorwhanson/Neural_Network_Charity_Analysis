@@ -12,9 +12,10 @@ During data preprocessing the following was determined:
 - Data determined to be potentially unimportant to predicting the target were removed. The columns of `EIN` and `NAME` were removed in the initial model, since the employee identification number and the name of the organization didn't seem likely to assist in predicting effective funding use.
 
 While compiling, training, and evaluating the models the following was determined:
-- The initial model contained **2** hidden layers, the first with 8 nodes and the second with 5 nodes. Both hidden layers utilized the **RELU** activation function. The output layer utilized the **Sigmoid** activation function as the purpose was to classify the prediction based on an organization's probability of being successful or not (target).
+- The initial model contained **2** hidden layers, the first with 8 nodes and the second with 5 nodes. 2 hidden layers were chosen because keeping the hidden layers 2-3 times the number of inputs seemed a sufficient place to begin. Both hidden layers utilized the **RELU** activation function. The output layer utilized the **Sigmoid** activation function because the purpose was to predict whether or not an organization would use funds effectively (the sigmoid output of 0 to 1 fits this exactly).
 - The initial model did **not** achieve target performance, falling just short with an accuracy of **72.7 %**.
 
 ![initial_model](https://github.com/conorwhanson/Neural_Network_Charity_Analysis/blob/main/resources/initial_model.png)
 
-- 
+- After running the initial model 2 more models were created in an attempt to optimize model performance.
+    - Optimization attempt # 1: 
