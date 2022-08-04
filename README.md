@@ -18,10 +18,16 @@ While compiling, training, and evaluating the models the following was determine
 ![initial_model](https://github.com/conorwhanson/Neural_Network_Charity_Analysis/blob/main/resources/initial_model.png)
 
 - After running the initial model 2 more models were created in an attempt to optimize model performance.
-    - Optimization attempt # 1: While dropping the `EIN` and `NAME` columns as in the initial model, this attempt sought to bin the `ASK_AMT` column so as to group together the amount of funding requested by each organization. 
+    - **Optimization attempt # 1:** While dropping the `EIN` and `NAME` columns as in the initial model, this attempt also binned the `ASK_AMT` column so as to group together the amount of funding requested by each organization. 
     
     ![ask_bins](https://github.com/conorwhanson/Neural_Network_Charity_Analysis/blob/main/resources/ask_bins.png)
     
-    Seven bins were created (a significant reduction from 8747 independent amounts requested) and then fed into the initial model (2 hidden layers both with **RELU**; 8 neurons in first layer, 5 neurons in the second, sigmoid activation function for the output layer). The results were clear by 23 epochs: the optimization failed and only acheived **53 %** accuracy with a high loss metric of **.69**.
+    Seven bins were created (a significant reduction from 8747 independent amounts requested) and then fed into the initial model (2 hidden layers both with **RELU**; 8 neurons in first layer, 5 neurons in the second, sigmoid activation function for the output layer). The results were clear by 23 epochs: the optimization failed and achieved only **53 %** accuracy with a high loss metric of **.69**.
 
-    - Optimization attempt # 2:
+    - **Optimization attempt # 2:** Upon further exploration of the data it was decided that this attempt would bin the `NAME` column. This brought the number of features in the column down from 19568 to 793, a siginificant reduction. Further, it was thought that if the same organizations requested various amounts of funds many times, then perhaps if they're successful that would help classify them more easily. The names were binned that occurred 1 time or less.
+
+    ![name_bins](https://github.com/conorwhanson/Neural_Network_Charity_Analysis/blob/main/resources/names_list.png)
+
+    Slight modifications were also made to the model itself, reducing the amount of neurons in both hidden layers. 
+
+    ![opt_model_2_structure](https://github.com/conorwhanson/Neural_Network_Charity_Analysis/blob/main/resources/optimized_model_2.png)
