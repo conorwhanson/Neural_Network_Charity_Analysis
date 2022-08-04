@@ -28,6 +28,6 @@ While compiling, training, and evaluating the models the following was determine
 
     ![name_bins](https://github.com/conorwhanson/Neural_Network_Charity_Analysis/blob/main/resources/names_list.png)
 
-    Slight modifications were also made to the model itself, reducing the amount of neurons in both hidden layers. 
+    Slight modifications were also made to the model itself, reducing the amount of neurons in both hidden layers. The first layer was reduced to 6 neurons, the second was reduced to 4 neurons. The reasoning behind this was that if the resulting accuracy was low, it was likely due to the input data and no amount of model manipulation would improve it. The activation functions, both in the hidden layers and output layer, remained unchanged.
 
     ![opt_model_2_structure](https://github.com/conorwhanson/Neural_Network_Charity_Analysis/blob/main/resources/optimized_model_2.png)
