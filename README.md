@@ -18,4 +18,8 @@ While compiling, training, and evaluating the models the following was determine
 ![initial_model](https://github.com/conorwhanson/Neural_Network_Charity_Analysis/blob/main/resources/initial_model.png)
 
 - After running the initial model 2 more models were created in an attempt to optimize model performance.
-    - Optimization attempt # 1: 
+    - Optimization attempt # 1: While dropping the `EIN` and `NAME` columns as in the initial model, this attempt sought to bin the `ASK_AMT` column so as to group together the amount of funding requested by each organization. 
+    
+    ![ask_bins]()
+    
+    Seven bins were created (a significant reduction from 8747 independent amounts requested) and then fed into the initial model (2 hidden layers both with **RELU**; 8 neurons in first layer, 5 neurons in the second, sigmoid activation function for the output layer). The results were clear by 23 epochs: the optimization failed and only acheived
